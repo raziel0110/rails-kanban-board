@@ -39,7 +39,6 @@ const Board = () => {
 
     const onDragOver = (e, col) => {
         e.preventDefault();
-        
         setColId(col.id)
     }
 
