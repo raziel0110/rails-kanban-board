@@ -4,7 +4,7 @@ class Api::V1::CardsController < ApplicationController
 
     def index
         @cards = Card.all
-        render json: {cards: @cards}, include: [:column], except: [:column_id]
+        render json: {cards: @cards}
     end
 
     def show
@@ -23,7 +23,7 @@ class Api::V1::CardsController < ApplicationController
 
     def update
         if @card.update(cards_params)
-            render json: @card, include: [:column], except: [:column_id], status: :created, location: @card
+            render json: @card
         else
             render json: @card.errors, status: 400
         end

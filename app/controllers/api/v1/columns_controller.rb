@@ -5,7 +5,7 @@ class Api::V1::ColumnsController < ApplicationController
     def index
         @columns = Column.order(:id)
 
-        render json: @columns, include: { cards: {include: [:column], except: %i[column_id]}}
+        render json: @columns
     end
 
     def create
