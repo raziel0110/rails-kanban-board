@@ -43,7 +43,8 @@ const Board = () => {
     }
 
     const onDrop = (e) => {
-        console.log(e);
+        if (colId === dragged.column_id) return;
+
         const card = {
             title: dragged.title,
             column_id: colId
